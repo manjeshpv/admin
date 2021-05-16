@@ -14,33 +14,9 @@
   <link rel="shortcut icon" ng-href="{{App.Page.favicon()}}">
   <link rel="icon" type="image/png" ng-href="{{App.Page.favicon()}}" sizes="60x60">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="app/vendor.8486c930.css">
-  <link rel="stylesheet" href="app/app.d5b031f1.css">
+  <link rel="stylesheet" href="app/vendor.fdf129ae.css">
+  <link rel="stylesheet" href="app/app.c8007ae5.css">
   <link rel="manifest" href="/manifest.json" />
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-
-  <script type="text/javascript">
-
-    if (navigator.serviceWorker) {
-
-      navigator.serviceWorker.register('./sw.js')
-        .then(function (registration) {
-          return fetch(window.location.href);
-        })
-        .then(console.info)
-        .catch(console.warn);
-
-    }
-  </script>
-
-  <script src="https://cdn.rawgit.com/kjur/jsrsasign/c057d3447b194fa0a3fdcea110579454898e093d/jsrsasign-all-min.js"></script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TQMCRMT');</script>
-  <!-- End Google Tag Manager -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -53,30 +29,23 @@
 
 <!-- Add your site or application content here -->
 <div id="app" ng-class="{
-    'app-header-fixed':true,
-    'app-aside-fixed':true,
-    'app-aside-folded':App.app.settings.asideFolded,
+    'app-header-fixed': App.app.settings.headerFixed,
+    'app-aside-fixed': true,
+
     'app-aside-dock':App.app.settings.asideDock,
     'container':App.app.settings.container      }" class="app">
+  <!--    'app-aside-folded':App.app.settings.asideFolded,-->
   <!--<header>-->
-  <banner class="banner"></banner>
-  <navbar></navbar> <!--<div ng-include="'html/blocks/header.html'" class="app-header navbar"></div>-->
-  <!--</header>-->
+  <!--<navbar ng-show="App.app.settings.showHeader"></navbar> &lt;!&ndash;<div ng-include="'html/blocks/header.html'" class="app-header navbar"></div>&ndash;&gt;
+  --><!--</header>-->
   <content>
-    <div class="app-content" ng-class="{'m-t-xl': App.app.settings.isAdmin}">
+    <div aclass="app-content" ng-class="{'m-t-xl': App.app.settings.isAdmin}">
       <div ui-butterbar=""></div>
       <a href="" ui-toggle-class="off-screen" data-target=".app-aside" class="off-screen-toggle hide"></a>
       <div>
         <toaster-container  toaster-options="{'position-class': 'toast-bottom-right'}"></toaster-container>
-        <announcement></announcement>
         <div class="hbox">
-          <div ng-if="App.showCustomerSideBar()" class="col w-md">
-            <!--<div class="wrapper b-b bg">-->
-            <!--<a ui-sref="app.mail.compose" class="btn btn-sm btn-danger w-xs font-bold" href="#/app/mail/compose">Manage JD</a>-->
-            <!--</div>-->
-            <customer-nav></customer-nav>
-          </div>
-          <div ui-view class="col"></div>
+          <div ui-view aclass="col"></div>
         </div>
       </div>
     </div>
@@ -93,19 +62,7 @@
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
-<script src="app/vendor.4f7eabb0.js"></script>
-<script src="app/app.72953a59.js"></script>
-<script type="text/javascript">
-  console.log('cuelinks page body', angular.element(document.body));
-  var pubID = '54240CL48886';
-
-  (function(d, t) {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;s.src = (document.location.protocol == 'https:' ? 'https://cdn0.cuelinks.com/js/' : 'http://cdn0.cuelinks.com/js/')  + 'cuelinksv1.js';
-    // document.getElementsByTagName('body')[0].appendChild(s);
-    angular.element(document.body).append(s);
-  }());
-</script>
+<script src="app/vendor.75c42914.js"></script>
+<script src="app/app.286d1ae6.js"></script>
 </body>
 </html>
